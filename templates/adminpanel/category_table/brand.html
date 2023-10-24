@@ -1,0 +1,55 @@
+{% extends 'adminpanel/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Brand Table</h1>
+    <p class="mb-4">Product Brand details </p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Brand -list</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Brand name</th>
+                            <th>Slug</th>
+                            <th>Displayed</th>
+                            <th class="text-center"><a href="{% url 'add_brand' %}" class="btn btn-dark">Add New Brand</a></th>
+                        
+                        </tr>
+                    </thead>
+                   
+                    <tbody>
+                        {% if brands %}
+                            {% for brand in brands %}
+                                <tr>
+                                    <td>{{brand.brand_name}}</td>
+                                    <td>{{brand.slug}}</td>
+                                    <td>{{brand.is_displayed}}</td>
+                                    <td class="text-center">
+                                        <a href="{% url 'edit_brand'  brand.id%}" class="btn btn-success">Edit </a>
+                                        <a href="{% url 'delete_brand'  brand.id%}" class="btn btn-danger" onclick="return confirm('Delete {{brand.brand_name}} ,are you sure?')">Delete </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+                <!-- .container-fluid -->
+</div>
+<!-- End of Main Content -->
+
+{% endblock content %}

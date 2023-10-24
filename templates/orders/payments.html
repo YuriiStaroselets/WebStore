@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    <!-- ============================ COMPONENT 1 ================================= -->
+    <section class="cart_area padding_top">
+        <div class="container">
+            <h2 class="text-center mb-4">Review your order and make payment</h2><hr>
+            <div class="row">
+                <aside class="col-lg-8">
+
+                    <div class="card">
+                        <h5 class="card-header">Billing Address</h5>
+                        <div class="card-body">
+                          <p class="card-text">{{ order.full_name}}</p>
+                          <p class="card-text">{{ order.full_address}}</p>
+                          <p class="card-text">{{ order.email}}</p>
+                          <p class="card-text">{{ order.phone}}</p>
+                          {% if order.order_note %}
+                            <b>Order Note :</b> {{order.order_note}}
+                          {% endif %}
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h5 class="card-header">Payment Method</h5>
+                        <div class="card-body">
+                          <p class="card-text"> Pay Pal</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h5 class="card-header">Review Products</h5>
+                        <div class="card-body">
+
+                            <table class="table">
+
+                                <thead class="text-muted">
+                                    <tr class="small text-uppercase">
+                                    <th scope="col">Product</th>
+                                    <th scope="col" width="120">Quantity</th>
+                                    <th scope="col" width="120">Price</th>
+                                    </tr>
+                                </thead>
+                                {% for cart_item  in cart_items %}
+    
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <figure class="itemside align-items-center" >
+    
+                                                    <div class="aside " ><img src="{{cart_item.product.product_image.url}}" style="height:10vh"class="img-sm"></div>
+                                                    <figcaption class="info">
+                                                        <a href="{{cart_item.product.get_url}}" class="title text-dark" style="height:10vh">{{cart_item.product.product_name}}</a>
+                                                        <p class="text-muted small">
+                                                            Size:
+                                                            {% if cart_item.variations.all %}
+                                                                {% for item in cart_item.variations.all %}
+                                                                    {{item.variation_size | capfirst}} <br>
+                                                                {% endfor %}
+                                                            {% endif %}
+                                                        </p>
+                                                    </figcaption>
+                                                </figure>
+                                            </td>
+    
+                                            <td>
+                                                <label for="">{{cart_item.quantity}}</label>
+                                            </td>
+                                            
+                                            <td> 
+                                                <div class="price-wrap"> 
+                                                    <var class="price">${{cart_item.sub_total}}</var> 
+                                                    <small class="text-muted"> $ {{cart_item.product.price}} each</small> 
+                                                </div> <!-- price-wrap .// -->
+                                            </td>
+                                            
+                                        </tr>
+    
+                                        
+    
+                                    </tbody> <!-- t body end.// -->
+                                {% endfor %}
+    
+                            </table>   
+
+                        </div>
+                    </div>
+
+                </aside> <!-- col.// -->
+
+                <aside class="col-lg-4">
+                
+                    <div class="card">
+                        <div class="card-body">
+                            <dl class="dlist-align">
+                                <dt>Total price:</dt>
+                                <dd class="text-right">${{total}}</dd>
+                            </dl>
+                            <hr>
+                            <a href="{% url 'payments' order_number=order.order_number %}" style="display:inline-block!important;background:#0488cd;background-size:cover;width: 256px!important;height:54px!important;border:none!important;border-radius:14px!important;padding:18px!important;text-decoration:none!important;box-shadow:3px 2px 8px rgba(71,66,66,0.22)!important;text-align:center!important;outline:none!important;" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity='1';"> <span style="font-family:Verdana,Arial,sans-serif!important;font-weight:bold!important;font-size:14px!important;color:#ffffff!important;line-height:18px!important;vertical-align:middle!important;">Оплатити</span></a>
+
+                        </div> <!-- card-body.// -->
+                    </div> <!-- card.// -->
+                </aside> <!-- col.// -->                                                
+            </div> <!-- row.// -->
+
+
+
+           
+        </div> <!-- container .//  --> 
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,137 @@
+{% load static %}
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'adminpanel' %}">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Admin</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'adminpanel' %}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Admin-Panel Home</span></a>
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Shop Home</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Interface
+    </div>
+
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse11"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Home</span>
+        </a>
+        <div id="collapse11" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Select category:</h6>
+                <a class="collapse-item" href="{% url 'home_table' 1%}">Carousel</a>
+                <a class="collapse-item" href="{% url 'home_table' 2%}">Awesomes</a>
+                <a class="collapse-item" href="{% url 'home_table' 3%}">Best Sellers</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu       for Accounts-->      
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse1"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Users</span>
+        </a>
+        <div id="collapse1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom Components:</h6>
+                <a class="collapse-item" href="{% url 'user_accounts_table' 1%}">Active Users</a>
+                <a class="collapse-item" href="{% url 'user_accounts_table' 2%}">Banned Users</a>
+
+            
+            </div>
+        </div>
+    </li> 
+
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Categories</span>
+        </a>
+        <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Select category:</h6>
+                <a class="collapse-item" href="{% url 'category_table' 1%}">Main Category</a>
+                <a class="collapse-item" href="{% url 'category_table' 2%}">Category</a>
+                <a class="collapse-item" href="{% url 'category_table' 3%}">Sub Category</a>
+                <a class="collapse-item" href="{% url 'category_table' 4%}">Brand</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse4"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Orders & payment</span>
+        </a>
+        <div id="collapse4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom Components:</h6>
+                <a class="collapse-item" href="{% url 'order_table' 1 %}">New orders</a>
+                <a class="collapse-item" href="{% url 'order_table' 2 %}">Accepted orders</a>
+                <a class="collapse-item" href="{% url 'order_table' 3 %}">Completed orders</a>
+                <a class="collapse-item" href="{% url 'order_table' 4 %}">Cancelled orders</a>
+                <a class="collapse-item" href="{% url 'order_table' 5 %}">payments</a>
+
+
+                
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - store Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse5"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Products & Variations</span>
+        </a>
+        <div id="collapse5" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom Components:</h6>
+                <a class="collapse-item" href="{% url 'store_table' 1 %}">Products</a>
+                <a class="collapse-item" href="{% url 'store_table' 2 %}">Variations</a>
+
+                
+                
+            </div>
+        </div>
+    </li>
+
+    
+
+    
+</ul>
+<!-- End of Sidebar -->
