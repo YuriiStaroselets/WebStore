@@ -280,7 +280,7 @@ class CheckoutView(View):
         names = [account_price.payment_account]
         cost = [account_price.price]
         amount = [1]
-        return_url = 'http://192.168.1.19:8000/accounts/buy/status/'
+        return_url = f'{settings.MERCHANT_DOMAIN}/accounts/buy/status/'
         datatime = calendar.timegm(time.gmtime())
 
         yr = int(datetime.date.today().strftime('%Y'))

@@ -30,7 +30,7 @@ def payments(request, order_number):
     names = [f"Оплата замовлення: {order.order_number}"]
     cost = [order.order_total]
     amount = [1]
-    return_url = 'http://192.168.1.19:8000/orders/payments/status/'
+    return_url = f'{settings.MERCHANT_DOMAIN}/orders/payments/status/'
     datatime = calendar.timegm(time.gmtime())
     order_number = f"{request.user.id}00{order_number}"
 
