@@ -115,7 +115,7 @@ def payments_status(request):
                     cat.save()
                     product.save()
 
-                    all_products = Product.objects.all()
+                    all_products = Product.objects.filter(variation__isnull=False)
 
                     for product in all_products:
                         variations = Variation.objects.filter(product=product)
