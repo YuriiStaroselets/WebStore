@@ -31,38 +31,36 @@
 
                 <form action="{% url 'filter' %}" method="GET">
   <select name="brand">
-    <option value="">Всі бренди</option>
+    <option value="">All Brand</option>
     {% for brand in brands %}
       <option value="{{ brand.slug }}" {% if brand.slug == selected_brand %}selected{% endif %}>{{ brand.brand_name }}</option>
     {% endfor %}
   </select>
   <select name="main_category">
-    <option value="">Всі головні категорії</option>
+    <option value="">All Main Category</option>
     {% for main_cat in main %}
       <option value="{{ main_cat.slug }}" {% if main_cat.slug == selected_main_category %}selected{% endif %}>{{ main_cat.main_category_name }}</option>
     {% endfor %}
   </select>
   <select name="category">
-    <option value="">Всі категорії</option>
+    <option value="">All Category</option>
     {% for cat in categories %}
       <option value="{{ cat.slug }}" {% if cat.slug == selected_category %}selected{% endif %}>{{ cat.category_name }}</option>
     {% endfor %}
   </select>
   <select name="sub_category">
-    <option value="">Всі підкатегорії</option>
+    <option value="">All SubCategory</option>
     {% for sub_cat in sub_categories %}
       <option value="{{ sub_cat.slug }}" {% if sub_cat.slug == selected_subcategory %}selected{% endif %}>{{ sub_cat.sub_category_name }}</option>
     {% endfor %}
   </select>
-  <input type="number" name="minimum" placeholder="Мінімальна ціна" value="{{ selected_min }}">
-  <input type="number" name="maximum" placeholder="Максимальна ціна" value="{{ selected_max }}">
-  <button type="submit">Пошук</button>
+  <input type="number" name="minimum" placeholder="Minimal price" value="{{ selected_min }}">
+  <input type="number" name="maximum" placeholder="Maximum price" value="{{ selected_max }}">
+  <button type="submit">Search</button>
+  {% if selected_brand or selected_main_category or selected_category or selected_subcategory or selected_min or selected_max %}
+    <a href="{% url 'store' %}" class="btn btn-primary">Скинути фільтри</a>
+  {% endif %}
 </form>
-
-{% if selected_brand or selected_main_category or selected_category or selected_subcategory or selected_min or selected_max %}
-  <a href="{% url 'store' %}" class="btn btn-primary">Скинути фільтри</a>
-{% endif %}
-
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="col-lg-12">
