@@ -58,7 +58,7 @@
   <input type="number" name="maximum" placeholder="Maximum price" value="{{ selected_max }}">
   <button type="submit">Search</button>
   {% if selected_brand or selected_main_category or selected_category or selected_subcategory or selected_min or selected_max %}
-    <a href="{% url 'store' %}" class="btn btn-primary">Скинути фільтри</a>
+    <a href="{% url 'store' %}" class="btn btn-primary">Reset Filter</a>
   {% endif %}
 </form>
                 <div class="col-lg-9">
