@@ -85,7 +85,7 @@
                                         <div class="single_product_text">
                                             <h3>{{product.brand}}</h3>
                                             <a href="{{product.get_url}}"><h4>{{product.product_name}}</h4></a>
-                                            <h3>${{product.price}}.00</h3>
+                                            <h3>{{product.price}}.00 UAH</h3>
                                             <a href="{{product.get_url}}" class="add_cart">view details</a>
                                             <a href="{% url 'add_wishlist' product.id%}"><i class="ti-heart"></i></a>
                                         </div>
@@ -146,7 +146,6 @@
                                         </ul>
                                     {% endif %}
 
-
                                 </nav>
                             </div>
                         </div>
@@ -179,7 +178,7 @@
                                     <img src="{{bestseller.product.product_image.url}}" alt="">
                                     <div class="single_product_text">
                                         <h4></h4>{{bestseller.product.product_name}}
-                                        <h3>${{bestseller.product.price}}</h3>
+                                        <h3>{{bestseller.product.price}} UAH</h3>
                                     </div>
                                 </div>
                             {% endfor %}
@@ -197,7 +196,3 @@
 {% block script %}
 <script src="{% static 'js/price_rangs.js'%}"></script>
 {% endblock script %}
-
-
-
-

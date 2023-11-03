@@ -11,7 +11,6 @@
         <h1 class="h3 mb-2 text-gray-800">Order Table</h1>
         <p class="mb-4">Ordered product and its details</p>
 
-        
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -21,7 +20,6 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-
                             <tr>
                                 <th>Product</th>
                                 <th>Variation</th>
@@ -32,7 +30,6 @@
                                 <th>Payment ID</th>
                             </tr>
                         </thead>
-
                         <tfoot>
                             <tr>
                                 <th>Product</th>
@@ -44,9 +41,7 @@
                                 <th>Payment ID</th>
                             </tr>
                         </tfoot>
-
                         <tbody>
-
                             {% if order_products %}
                                 {% for order_prodcut in order_products %}
                                     <tr>
@@ -55,14 +50,12 @@
                                         <td>{{order_prodcut.user}}</td>
                                         <td>{{order_prodcut.order}}</td>
                                         <td>{{order_prodcut.quantity}}</td>
-                                        <td>$ {{order_prodcut.product_price}}</td>
+                                        <td>{{order_prodcut.product_price}} UAH</td>
                                         <td>{{order_prodcut.payment_id}}</td>
                                     </tr>
                                 {% endfor %}
                             {% endif %}
-                            
                         </tbody>
-
                     </table>
                 </div>
             </div>

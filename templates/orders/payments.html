@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-
-
     <!-- ============================ COMPONENT 1 ================================= -->
     <section class="cart_area padding_top">
         <div class="container">
@@ -28,7 +25,7 @@
                     <div class="card">
                         <h5 class="card-header">Payment Method</h5>
                         <div class="card-body">
-                          <p class="card-text"> Pay Pal</p>
+                          <p class="card-text"> WAYFORPAY </p>
                         </div>
                     </div>
 
@@ -73,15 +70,12 @@
                                             
                                             <td> 
                                                 <div class="price-wrap"> 
-                                                    <var class="price">${{cart_item.sub_total}}</var> 
-                                                    <small class="text-muted"> $ {{cart_item.product.price}} each</small> 
+                                                    <var class="price">{{cart_item.sub_total}} UAH</var>
+                                                    <small class="text-muted">{{cart_item.product.price}} UAH each</small>
                                                 </div> <!-- price-wrap .// -->
                                             </td>
                                             
                                         </tr>
-    
-                                        
-    
                                     </tbody> <!-- t body end.// -->
                                 {% endfor %}
     
@@ -98,7 +92,7 @@
                         <div class="card-body">
                             <dl class="dlist-align">
                                 <dt>Total price:</dt>
-                                <dd class="text-right">${{total}}</dd>
+                                <dd class="text-right">{{total}} UAH</dd>
                             </dl>
                             <hr>
                             <a href="{% url 'payments' order_number=order.order_number %}" style="display:inline-block!important;background:#0488cd;background-size:cover;width: 256px!important;height:54px!important;border:none!important;border-radius:14px!important;padding:18px!important;text-decoration:none!important;box-shadow:3px 2px 8px rgba(71,66,66,0.22)!important;text-align:center!important;outline:none!important;" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity='1';"> <span style="font-family:Verdana,Arial,sans-serif!important;font-weight:bold!important;font-size:14px!important;color:#ffffff!important;line-height:18px!important;vertical-align:middle!important;">Оплатити</span></a>
@@ -107,10 +101,6 @@
                     </div> <!-- card.// -->
                 </aside> <!-- col.// -->                                                
             </div> <!-- row.// -->
-
-
-
-           
         </div> <!-- container .//  --> 
     </section>
 

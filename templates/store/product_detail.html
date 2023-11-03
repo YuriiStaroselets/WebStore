@@ -56,7 +56,7 @@
                 <div class="s_product_text">
                               <h3>{{single_product.brand.brand_name}}</h3>
                   <h3>{{single_product.product_name}}</h3>   
-                  <h2>${{single_product.price}}.00</h2>
+                  <h2>{{single_product.price}}.00 UAH</h2>
                   <ul class="list">
                     <li>
                       <a class="active" href="{% url 'filter' %}?category={{ single_product.category.slug }}">
@@ -106,7 +106,6 @@
                         <a href="{% url 'add_wishlist' single_product.id  %}" class="btn_3 ">
                            <i class="fa-solid fa-heart"></i>
                         </a>
-
                   </div>
                 </div>    
               </div>
@@ -517,14 +516,11 @@
                       <img src="{{bestseller.product.product_image.url}}" alt="">
                       <div class="single_product_text">
                           <h4></h4>{{bestseller.product.product_name}}
-                          <h3>${{bestseller.product.price}}</h3>
+                          <h3>{{bestseller.product.price}} UAH</h3>
                       </div>
                   </div>
               {% endfor %}
             {% endif %}
-
-            
-
           </div>
         </div>
       </div>

@@ -3,7 +3,6 @@
 
 {% block content %}
 
-
  <!--================Home Banner Area =================-->
   <!-- breadcrumb start-->
   <section class="breadcrumb " style='background-color:#91C788'>
@@ -31,10 +30,7 @@
       Continue Shopping
     </a>
   </div>
-
-
   {% else %}
-
   <!--================Cart Area =================-->
   <section class="cart_area padding_top">
     <div class="container">
@@ -60,22 +56,18 @@
                       <div class="media-body">
                         <h4>{{cart_item.product.brand}}</h4>
                         <a href="{{cart_item.product.get_url}}"><p>{{cart_item.product.product_name}}</p></a>
-
                         {% if cart_item.variations.all %}
                           {% for item in cart_item.variations.all %}
                             Size : {{item.variation_size | capfirst}} <br>
-                          
                           {% endfor %}
                         {% endif %}
                       </div>
                     </div>
                   </td>
                   <td>
-                    <h5>${{cart_item.product.price}}.00</h5>
+                    <h5>{{cart_item.product.price}}.00 UAH</h5>
                   </td>
-
-<!--cart Quantity minus and plus option-->   
- 
+<!--cart Quantity minus and plus option-->
                   <td>
                     <div class="product_count d-flex justify-content-center">
                       <div>
@@ -96,9 +88,8 @@
                       </div>
                     </div>
                   </td>
-                  
                   <td>
-                    <h5>${{cart_item.sub_total}}.00</h5>
+                    <h5>{{cart_item.sub_total}}.00 UAH</h5>
                   </td>
                   <td class="text-right">
                     <a href="{% url 'remove_cart_item' cart_item.product.id cart_item.id%}" class="btn btn-danger">remove</a>
@@ -112,7 +103,7 @@
                 <td></td>
                 <td>
                   <h5>Subtotal</h5>
-                  <h5>${{total}}.00</h5>
+                  <h5>{{total}}.00 UAH</h5>
                 </td>
               </tr>
             </tbody>
@@ -127,9 +118,7 @@
     {% endif %}
   <!--================End Cart Area =================-->
 
-
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
 <script>
 
  // function addtoCart(productId) {

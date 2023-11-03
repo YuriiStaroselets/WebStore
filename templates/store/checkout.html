@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
  <!--================Cart Area =================-->
  <section class="cart_area padding_top">
     <div class="container">
@@ -42,7 +41,7 @@
                                     <input type="text" class="form-control" name="city" required>
                                 </div>
                                 <div class="col for-group">
-                                    <label for="">Post Office</label>
+                                    <label for="">Nova Posta</label>
                                     <input type="text" class="form-control" name="post_office" required>
                                 </div>
                             </div>
@@ -51,8 +50,6 @@
                                 <label for="">Order Note</label>
                                 <textarea name="order_note" rows="2" class="form-control"></textarea>
                             </div>
-
-                        
                     </div> <!-- extra added by me  -->
                 </div> <!-- card.// -->
             </aside>
@@ -97,20 +94,14 @@
                                         
                                         <td> 
                                             <div class="price-wrap"> 
-                                                <var class="price">${{cart_item.sub_total}}</var> 
-                                                <small class="text-muted"> $ {{cart_item.product.price}} each</small> 
+                                                <var class="price">{{cart_item.sub_total}} UAH</var>
+                                                <small class="text-muted"> {{cart_item.product.price}} UAH each</small>
                                             </div> <!-- price-wrap .// -->
                                         </td>
-                                        
                                     </tr>
-
-                                    
-
                                 </tbody> <!-- t body end.// -->
                             {% endfor %}
-
-                        </table>   
-                                
+                        </table>
                         <button type="submit" class="btn btn-primary btn-block" name="submit"> Place Order </button>
                         <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
                     </form>
@@ -118,21 +109,9 @@
                 </div> <!-- card.// -->
                 
             </aside> <!-- col.// -->
-    
-
-          
         </div>
     </div>
 </section>
   <!--================End Cart Area =================-->
 
-  
 {% endblock content %}
-
-
-
-
-
-
-
-
