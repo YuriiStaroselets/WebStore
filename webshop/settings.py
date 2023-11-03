@@ -140,9 +140,9 @@ STATICFILES_DIRS = [
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
-MERCHANT_ACCOUNT = 'thelastbit_pythonanywhere_com'
-MERCHANT_KEY = '0dc7120679d141f4ee0f9e2075c6477ddb82c191'
-MERCHANT_DOMAIN = 'thelastbit.pythonanywhere.com'
+MERCHANT_ACCOUNT = 'yuriistaroselets_pythonanywhere_com'
+MERCHANT_KEY = 'c0be730ee9ebf54479b7684720384e087b187430'
+MERCHANT_DOMAIN = 'https://yuriistaroselets.pythonanywhere.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
