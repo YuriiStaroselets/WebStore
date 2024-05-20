@@ -91,12 +91,8 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hello',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',  # або IP-адреса вашого сервера MySQL
-        'PORT': '3306',       # порт, на якому працює MySQL (зазвичай 3306)
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
